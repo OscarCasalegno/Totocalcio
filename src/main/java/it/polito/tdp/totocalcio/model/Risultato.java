@@ -12,16 +12,21 @@ import java.util.List;
  */
 public class Risultato {
 
-	private List<RisultatoPartita> risultati = new ArrayList<>();
+    private List<RisultatoPartita> risultati = new ArrayList<>();
 
-	public Risultato(String colonna) {
-		for (int i = 0; i < colonna.length(); i++) {
-			risultati.add(RisultatoPartita.valueOf(colonna.charAt(i)));
-		}
-	}
-	
-	public String toString() {
-		return this.risultati.toString() ;
-	}
+    public Risultato(String colonna) {
+        for (int i = 0; i < colonna.length(); i++) {
+            risultati.add(RisultatoPartita.valueOf(colonna.charAt(i)));
+        }
+    }
+
+    public Risultato(List<RisultatoPartita> lista) {
+        this.risultati.addAll(lista);
+    }
+
+    @Override
+    public String toString() {
+        return this.risultati.toString();
+    }
 
 }
